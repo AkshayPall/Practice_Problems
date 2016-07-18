@@ -45,8 +45,8 @@ public class ThreeNArraySolver {
 			printArray(thirdAr);
 
 
+			//Sort firstAr and secondAR
 			Quicksort qcksrt = new Quicksort();
-			//TODO: sort firstAr and secondAR
 			firstAr = Quicksort.sortRecur(firstAr, 0, n-1);
 			secondAr = Quicksort.sortRecur(secondAr, 0, n-1);
 
@@ -54,10 +54,36 @@ public class ThreeNArraySolver {
 			printArray(firstAr);
 			printArray(secondAr);
 
-			//TODO: create sum 2d array
+			//Create amd setup sum 2d array
+			int[][] sMatrix = new int [n+1][n+1]; //2d sum array
+			//setup
+			for (int p = 0; p < n+1; p++){
+				//let p represent rows
+				for (int l = 0; l < n+1; l++){
+					//let l represent columns
+
+					//setup arrays
+					if (p==0 && l>0){
+						sMatrix[l][p] = firstAr[l-1];
+					} else if (l==0 && p>0){
+						sMatrix[l][p] = secondAr[n-p];
+					} else if (l!=0 && p!=0){
+						//sum the values
+						sMatrix[l][p] = firstAr[l-1] + secondAr[n-p];
+					} else {
+						sMatrix[l][p] = 0; //for the origin location
+					}
+
+					System.out.print("\t"+sMatrix[l][p]);
+				}
+				System.out.println("");
+			}
+
+			
+
 
 			//TODO: iterate through thirdAr while comparing
-			//to values in the 
+			//to values in the 2d array/matrix
 
 	}
 
