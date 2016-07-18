@@ -79,12 +79,30 @@ public class ThreeNArraySolver {
 				System.out.println("");
 			}
 
-			
-
-
-			//TODO: iterate through thirdAr while comparing
+			//iterate through thirdAr while comparing
 			//to values in the 2d array/matrix
+			for(int f = 0; f < n; f++){
+				//let f be used to iterate through thirdAr
+				int sumNeeded = k-thirdAr[f];
+				int L = 1;
+				int P = 1;
+				boolean success = false;
 
+				while(!success && L < n+1 && P < n+1){
+					if (sumNeeded == sMatrix[L][P]){
+						success = true;
+						System.out.println("Sucess, sum of "+k+"exists from "
+						                   +firstAr[L]+", "+secondAr[P]+", "
+						                   +thirdAr[f]);
+					} else if (sumNeeded < sMatrix[L][P]){
+						//too low, need to move to right
+						L++;
+					} else {
+						//too high, move down
+						P++;
+					}
+				}
+			}
 	}
 
 	static void printArray(int ar[]){
