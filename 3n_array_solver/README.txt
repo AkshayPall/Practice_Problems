@@ -8,10 +8,11 @@ Array 1 {1, -6, 6, 7, 3}
 Array 2 {0, 2, 65, 23, 6}
 Array 3 {1, 68, -1, 54, 2}
 
+Answer)
 The sum of k DOES exist from the addition of 1, 0, and -1 from the
 respective arrays. 
 
-Procedure:
+Procedure)
 1) Sort the two arrays low to high using quicksort, an O(n lgn) algorithm.
 2) Form a 2D array or matrix of the two sorted arrays and their sums,
    going in increasing order "down to up" and left to right"
@@ -123,7 +124,7 @@ sum of k = 0.
 
 23	17	24	26	29	30
 
-6	0	9	11	14	15	//SUCCESS! 
+6	0	9	11	14	15	//SUCCESS! Return true, the sum k does exist.
 
 2	-4	3	5	8	9
 
