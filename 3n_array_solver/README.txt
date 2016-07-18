@@ -24,17 +24,17 @@ Procedure:
 
 Matrix)
 
-		-6	1		3		6		7
+	-6	1	3	6	7
 
 65	59	66	68	71	72
 
 23	17	24	26	29	30
 
-6		0		9		11	14	15
+6	0	9	11	14	15	
 
-2		-4	3		5		8		9
+2	-4	3	5	8	9
 
-0		-6	1		3		6		7
+0	-6	1	3	6	7
 
 
 Iteration of the -1 interger from the third array through the matrix
@@ -43,82 +43,81 @@ the first two arrays (ex. 1 and 0) to reach a combined
 sum of k = 0.
 
 1)
-		-6	1		3		6		7
+	-6	1	3	6	7
 
 65	(59)	66	68	71	72
 
 23	17	24	26	29	30
 
-6		0		9		11	14	15		//Too high, move down (lower value)
+6	0	9	11	14	15	//Too high, move down (lower value). 
 
-2		-4	3		5		8		9
+2	-4	3	5	8	9
 
-0		-6	1		3		6		7
+0	-6	1	3	6	7
 
 
 2)
-		-6	1		3		6		7
-
+	-6	1	3	6	7
 
 65	59	66	68	71	72
 
 23	(17)	24	26	29	30
 
-6		0		9		11	14	15		//Too high, move down again
+6	0	9	11	14	15	//Too high, move down. 
 
-2		-4	3		5		8		9
+2	-4	3	5	8	9
 
-0		-6	1		3		6		
+0	-6	1	3	6	7	
 
 
 
 3)
-		-6	1		3		6		7
+	-6	1	3	6	7
 
 65	59	66	68	71	72
 
 23	17	24	26	29	30
 
-6		(0)		9		11	14	15	//Too low, move right (higher)
+6	(0)	9	11	14	15	//Too low, move right (greater values). 
 
-2		-4	3		5		8		9
+2	-4	3	5	8	9
 
-0		-6	1		3		6		7
+0	-6	1	3	6	7
 
 
 
 4)
-		-6	1		3		6		7
+	-6	1	3	6	7
 
 65	59	66	68	71	72
 
 23	17	24	26	29	30
 
-6		0		(9)		11	14	15	//Too high, move down
+6	0	(9)	11	14	15	//Too high, move down. 
 
-2		-4	3		5		8		9
+2	-4	3	5	8	9
 
-0		-6	1		3		6		7
+0	-6	1	3	6	7
 
 
 
 5)
-		-6	1		3		6		7
+	-6	1	3	6	7
 
 65	59	66	68	71	72
 
 23	17	24	26	29	30
 
-6		0		9		11	14	15	//Too high, move down
+6	0	9	11	14	15	//Too high, move down. 
 
-2		-4	(3)		5		8		9
+2	-4	(3)	5	8	9
 
-0		-6	1		3		6		7
+0	-6	1	3	6	7
 
 
 
 6)
-		-6	1	3	6	7
+	-6	1	3	6	7
 
 65	59	66	68	71	72
 
