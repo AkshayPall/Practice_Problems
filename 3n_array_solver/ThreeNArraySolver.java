@@ -91,15 +91,15 @@ public class ThreeNArraySolver {
 				while(!success && L < n+1 && P < n+1){
 					if (sumNeeded == sMatrix[L][P]){
 						success = true;
-						System.out.println("Sucess, sum of "+k+"exists from "
-						                   +firstAr[L]+", "+secondAr[P]+", "
+						System.out.println("\n\nSUCCESS, sum of "+k+" exists from "
+						                   +firstAr[L-1]+", "+secondAr[n-P]+", "
 						                   +thirdAr[f]);
 					} else if (sumNeeded < sMatrix[L][P]){
-						//too low, need to move to right
-						L++;
-					} else {
-						//too high, move down
+						//too high, need to move down
 						P++;
+					} else {
+						//too low, move right
+						L++;
 					}
 				}
 			}
