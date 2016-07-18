@@ -45,6 +45,20 @@ public class ThreeNArraySolver {
 			printArray(thirdAr);
 
 
+			Quicksort qcksrt = new Quicksort();
+			//TODO: sort firstAr and secondAR
+			firstAr = Quicksort.sortRecur(firstAr, 0, n-1);
+			secondAr = Quicksort.sortRecur(secondAr, 0, n-1);
+
+			System.out.println("\nSORTED");
+			printArray(firstAr);
+			printArray(secondAr);
+
+			//TODO: create sum 2d array
+
+			//TODO: iterate through thirdAr while comparing
+			//to values in the 
+
 	}
 
 	static void printArray(int ar[]){
