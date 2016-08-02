@@ -1,0 +1,4 @@
+//This is an implmentation of Floyd's cycle finding, also known
+//as the tortoise and hare, algorithm for linked lists. I have used
+//this for a hackerrank problem
+
