@@ -39,7 +39,29 @@ The Node class is defined as follows:
 
         boolean complete = false;
         for (int i = 1; i < string.length() && complete == false; i++){
-            if (string.charAt(i-1)>=string.charAt(i)){
+
+            //check for possible negative integer
+            if (string.charAt(i-1) == '-') {
+                int previous = Integer.parseInt(string.substring(i-1, i+1));
+                i++;
+            } else {
+                int previous = string.charAt(i-1)-0;
+            }
+
+            //check for possible negative integer
+            if(string.charAt(i) == '-'){
+                int curr = Integer.parseInt(string.substring(i,i+2));
+                i++;
+            } else {
+                int curr = string.charAt(i)-0;
+            }
+
+
+            //if a negative int
+            if (string.charAt(i) == '-'){
+                i++;
+                //compare negative of 2 chars to prev value
+            }   else if (string.charAt(i-1)>=string.charAt(i)){
                 isBst = false;
                 complete = true;
             }
