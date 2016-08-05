@@ -8,26 +8,27 @@ The Node class is defined as follows:
      }
 */
     boolean checkBST(Node root) {
-        boolean isBST = true;
+        boolean isBST = false;
         
-        if (root.left != null){
-            if (root.left.data > root.data){
-                isBST = false;
-            } else {
-                isBST = checkBST(root.left);
-            }
-        }
-        if (root.right != null){
-            if (root.right.data < root.data){
-                isBST = false;
-            } else {
-                boolean rBstCheck = checkBST(root.right);
-                if (!rBstCheck || !isBST){
+        if (root != null){
+            isBST = true;
+            if (root.left != null){
+                if (root.left.data >= root.data){
                     isBST = false;
+                } else {
+                    isBST = checkBST(root.left);
+                }
+            }
+            if (root.right != null){
+                if (root.right.data <= root.data){
+                    isBST = false;
+                } else {
+                    boolean rBstCheck = checkBST(root.right);
+                    if (rBstCheck==false || isBST==false){
+                        isBST = false;
+                    }
                 }
             }
         }
-        
-        
         return isBST;
     }
