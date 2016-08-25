@@ -25,7 +25,7 @@ The Node class is defined as follows:
             value = inOrder (root.left, value);
         }
         
-        value = value+root.data;
+        value = value+","+root.data;
         
         if(root.right != null){
             value = inOrder(root.right, value);
@@ -40,27 +40,43 @@ The Node class is defined as follows:
         boolean complete = false;
         for (int i = 1; i < string.length() && complete == false; i++){
 
-            int previous = 0;
-            int curr = 0;
+        		//to find previous int
+            int prevStart = 0;
+            int prevEnd = i;
 
-            //check for possible negative integer
-            if (string.charAt(i-1) == '-') {
-                previous = Integer.parseInt(string.substring(i-1, i+1));
-                i++;
-            } else {
-                previous = string.charAt(i-1)-0;
-            }
+            //to find current int
+            int currStart = i;
+            int currEnd = i+1;
 
-            //check for possible negative integer
-            if(string.charAt(i) == '-'){
-                curr = Integer.parseInt(string.substring(i,i+2));
-                i++;
-            } else {
-                curr = string.charAt(i)-0;
-            }
+            //actual previous and current int values
+            boolean firstIndex = true;
+           	int previous = 0;
+           	int curr = 0;
 
 
-            if (previous >= curr){
+           	//finding current index
+           	current 
+
+
+
+            // //check for possible negative integer
+            // if (string.charAt(i-1) == '-') {
+            //     previous = Integer.parseInt(string.substring(i-1, i+1));
+            //     i++;
+            // } else {
+            //     previous = string.charAt(i-1)-0;
+            // }
+
+            // //check for possible negative integer
+            // if(string.charAt(i) == '-'){
+            //     curr = Integer.parseInt(string.substring(i,i+2));
+            //     i++;
+            // } else {
+            //     curr = string.charAt(i)-0;
+            // }
+
+
+            if (!firstIndex && previous >= curr){
                 isBst = false;
                 complete = true;
             }
