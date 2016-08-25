@@ -41,12 +41,10 @@ The Node class is defined as follows:
         for (int i = 1; i < string.length() && complete == false; i++){
 
         		//to find previous int
-            int prevStart = 0;
-            int prevEnd = i;
+            int prevStart = i;
 
             //to find current int
             int currStart = i;
-            int currEnd = i+1;
 
             //actual previous and current int values
             boolean firstIndex = true;
@@ -54,8 +52,23 @@ The Node class is defined as follows:
            	int curr = 0;
 
 
-           	//finding current index
-           	current 
+           	//finding current index - i should already be at the start
+           	while (i < string.length() && string.charAt(i) != ','){
+           		i++;
+           	}
+           	//found end of int
+           	curr = Integer.parseInt(string.substring(currStart, i));
+
+           	//finding previous index
+           	if (currStart > 1){
+           		firstIndex = false;
+           		currStart--; //this is used as the end of the previous index
+           		while (prevStart >= 1 && string.charAt(prevStart) != ','){
+           			prevStart--; //to find start of previous index
+           		}
+
+           		previous = Integer.parseInt(prevStart+1, currStart);
+           	}
 
 
 
