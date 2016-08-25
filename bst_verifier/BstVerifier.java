@@ -63,30 +63,13 @@ The Node class is defined as follows:
            	if (currStart > 1){
            		firstIndex = false;
            		currStart--; //this is used as the end of the previous index
-           		while (prevStart >= 1 && string.charAt(prevStart) != ','){
+           		prevStart-=2;
+           		while (prevStart >= 0 && string.charAt(prevStart) != ','){
            			prevStart--; //to find start of previous index
            		}
 
-           		previous = Integer.parseInt(prevStart+1, currStart);
+           		previous = Integer.parseInt(string.substring(prevStart+1, currStart));
            	}
-
-
-
-            // //check for possible negative integer
-            // if (string.charAt(i-1) == '-') {
-            //     previous = Integer.parseInt(string.substring(i-1, i+1));
-            //     i++;
-            // } else {
-            //     previous = string.charAt(i-1)-0;
-            // }
-
-            // //check for possible negative integer
-            // if(string.charAt(i) == '-'){
-            //     curr = Integer.parseInt(string.substring(i,i+2));
-            //     i++;
-            // } else {
-            //     curr = string.charAt(i)-0;
-            // }
 
 
             if (!firstIndex && previous >= curr){
