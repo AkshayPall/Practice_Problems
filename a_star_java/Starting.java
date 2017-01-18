@@ -1,4 +1,4 @@
-public Starting{
+public class Starting{
 
   final static int BLOCKED = 1;
   final static int CLEAR = 0;
@@ -7,20 +7,38 @@ public Starting{
       //2d array representing map to traverse
       //1 = the node is blocked (can not pass through)
       //0 = node is empty; you can include it in your path
-      int map[][] = {{0,0,0,0},
-                     {0,1,0,0},
-                     {0,0,1,0},
-                     {0,0,0,0},
-                     {0,0,0,0};
+
+
+      /**
+
+        Map visualization
+
+        - - - - - -
+        - - - X - -
+        - - X X X -
+        - - X - - -
+        - - - - - -
+        - - - - - -
+
+        **/
+      UnitNode map[][] = new UnitNode[6][6];
+      for (int i = 0; i < 6; i++){
+        for (int j = 0; j < 6; j++){
+          /** Check if the current position is one that should be blocked
+            and if so use the appropriate constructor.
+            **/
+          map[i][j] = (3 == i && 1 == j)
+                      || (3 == i && 1 == j)
+                      || (3 == i && 2 == j)
+                      || (2 == i && 2 == j)
+                      || (4 == i && 2 == j)
+                      || (2 == i && 3 == j)
+                      ? new UnitNode(i,j,false) : new UnitNode(i,j);
+        }
+      }
   }
 }
 
-//d = min(dx, dy) * 14 + abs(dx - dy) * 10
-//distance formula of the correct node from the target or starting node
-//(can use for both). dx and dy = delta x and delta y
-
 /** TODO:
- *  - make "node" class with x, y, hcost, gcost, fcost, and parent Node fields
- *  - create node "equality" method (check if the x and y values are equal)
- *  - create fcost calculator method (saves h and gcosts within it)
+    
  */
